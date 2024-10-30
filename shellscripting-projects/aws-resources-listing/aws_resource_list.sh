@@ -42,7 +42,7 @@ if [ $# -ne 2 ]; then
   echo -e "\nYou didn't provided all the necessary arguments. Refer below statements."
   echo -e "\n# Usage:    ./aws_resource_list.sh <aws_region> <aws_service>"
   echo -e "\n# Example:  ./aws_resource_list.sh us-east-1 ec2"
-  echo -e "\n** Provide space between the script file name, aws_region name and aws_service name **"
+  echo -e '\n " Provide space between the script file name, aws_region name and aws_service name "'
   exit 1
 else
   echo -e "\nAll arguments are provided successfully"
