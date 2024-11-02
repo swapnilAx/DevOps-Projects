@@ -1,4 +1,4 @@
-# Shell Scripting Project
+# Shell Scripting Project - 01
 
  ## " This script will list all the provisioned resources in the AWS account "
 

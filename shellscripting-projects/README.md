@@ -1,3 +1,3 @@
-# This is the directory for shell scripting projects  
+# Shell Scripting Projects  
 1 - aws-resources-listing =   
 2 - 
