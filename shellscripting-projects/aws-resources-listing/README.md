@@ -8,7 +8,7 @@
 ```
 
  **Author Name:** Swapnil Dhokchaule  
- **Version:** v0.0.1  
+ **Version:** v0.0.2  
  **Credit:** Mr. Abhishek Veeramalla
 
  **Script to automate the process of listing all the provisioned, running and halted resources in an AWS account.**
