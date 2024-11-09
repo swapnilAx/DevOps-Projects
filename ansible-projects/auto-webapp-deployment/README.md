@@ -11,12 +11,12 @@ Ansible is written in Python and uses a human-readable language. It works by con
 **In this project we are going to configure the web app servers and deploy the static web application.**  
 
 > ### **Note**  
-> Knowledge of `AWS EC2` and `ansible` required for completing this project. You can also use multimachine vagrant to complete this project.
+> Knowledge of `AWS EC2` and `ansible` required for completing this project. You can also use multimachine vagrant to complete this project locally.
 
 ## Let's get started...
 
 ## Task -01
-Login to you AWS account and Create 3 EC2 instances with same key pair. Navigate to the EC2 section in the AWS cloud console.  
+Login to your AWS account and Create 3 EC2 instances with same key pair. Navigate to the EC2 section in the AWS cloud console.  
 After creating the 3 ec2 instances, designate and name one instance as the ansible control node(ansible_host), and the other two instances as managed nodes(ansible_servers or web_servers)  
 Now connect to ansible_host ec2 instance using ssh and install ansible on it using below commands:-
 
@@ -37,11 +37,15 @@ After the installation you can check the ansible version using below command:
 ```
 ansible --version
 ```  
-Now copy the private ssh key from local host to ansible_host in the /home/ubuntu/.ssh directory. You can use below scp command to copy the private key:
+Now copy the private ssh key from local host to ansible_host in the /home/ubuntu/.ssh directory. You can use below scp command to copy the private key: type yes after it prompts for.
 ```
-scp -i ~/.ssh/ansible_key ~/.ssh/ansible_key ubuntu@public-ip:~/.ssh
+scp -i path/to/ansible_key path/to/ansible_key ubuntu@public-ip:~/.ssh
+```
+OR  if you have key in downloads folder.
+```
+scp -i ~\Downloads\ansible_key ~\Downloads\ansible_key ubuntu@public-ip:~/.ssh
 ```  
-Now check the permissions of the ansible-key, if they are not like this `-rw-------` or `600` then change the key permissions using below command:
+Now check the permissions of the ansible-key, if they are not `-rw-------` or `600` then change the key permissions using below command:
 ```
 sudo chmod 600 ansible_key
 ```  
@@ -64,6 +68,7 @@ create a playbook directory and navigate to it.
 mkdir playbook ; cd playbook
 ```
 Now create and write a ansible playbook to install Nginx. ansible playbooks are written in `YAML` language, so you should know how to write using yaml language.
+- my file name: nginx_install.yml
 ```yaml
 ---
 - name: This playbook will install Nginx on server nodes
