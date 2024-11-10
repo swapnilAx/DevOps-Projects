@@ -1,5 +1,8 @@
 # DevOps Projects
-- ansible-projects:
-- Shell Scripting Projects:
-- Terraform Projects:
+- ansible-projects:  
+  1-auto-webapp-deployment
+- Shell Scripting Projects:  
+  1-aws-resources-listing
+- Terraform Projects:  
+  
 - 
