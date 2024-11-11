@@ -31,25 +31,26 @@ Login to your AWS account and navigate to the EC2 section in the AWS cloud conso
 -->
 
 <p float="left"><b>
-  <img src="assets/images/instances-dash-1.png" alt="insatnces dashboard" height="100"/>-->
-  <img src="assets/images/ec2-name.png" height="100"/>--> 
-  <img src="assets/images/select-AMI.png" height="100"/>⤵
+  <img src="assets/images/instances-dash-1.png" alt="insatnces dashboard" height="200"/>-->
+  <img src="assets/images/ec2-name.png" height="200"/>--> 
+  <img src="assets/images/select-AMI.png" height="200"/>⤵
 </b></p>
 
 <p float="left"><b>
-  ⬇ <img src="assets/images/vpc,subnet,ip-setting.png" height="100"/><--
-  <img src="assets/images/create-key-pair.png" height="100"/><--
-  <img src="assets/images/key-pair-setting.png" height="100"/>
+  ⬇ <img src="assets/images/vpc,subnet,ip-setting.png" height="200"/><--
+  <img src="assets/images/create-key-pair.png" height="200"/><--
+  <img src="assets/images/key-pair-setting.png" height="200"/>
 </b></p>  
 
 <p float="left"><b>
-  <img src="assets/images/ansible-sg-rule.png" height="100"/>-->
-  <img src="assets/images/ec2-storage-setting.png" height="100"/>-->
-  <img src="assets/images/running-instances.png" height="100"/> Done!
+  <img src="assets/images/ansible-sg-rule.png" height="200"/>-->
+  <img src="assets/images/ec2-storage-setting.png" height="200"/>-->
+  <img src="assets/images/running-instances.png" height="200"/> Done!
 </b></p>  
 
 
-After creating the 3 EC2 instances, designate and name one instance as the ansible control node(ansible_host), and the other two instances as managed nodes(ansible_servers or web_servers)  
+After creating the 3 EC2 instances, designate and name one instance as the ansible control node, ansible_host respectively, and the other two instances as managed nodes(servers or web_servers).
+  
 Now connect to ansible_host EC2 instance using ssh and install ansible on it using below commands:-
 ```
 ssh -i ~\Downloads\ansible_key.pem ubuntu@13.201.40.36
