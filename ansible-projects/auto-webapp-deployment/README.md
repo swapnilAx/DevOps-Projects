@@ -34,36 +34,64 @@ Login to your AWS account and navigate to the EC2 section in the AWS cloud conso
 -->
 
 Click on `Launch instances`
+
 <img src="assets/images/instances-dash-1.png" alt="insatnces dashboard"/>
 
 Type name as `ansible_host` in Name option
+
 <img src="assets/images/ec2-name.png"/> 
 
 Select AMI `Ubuntu` from AMI options
+
 <img src="assets/images/select-AMI.png"/>
 
-Choose `VPC` and `public subnet`  
-**NOTE:** Choose Auto-assign public ip option
-<img src="assets/images/vpc,subnet,ip-setting.png"/>
-
 Click on `Create new key pair` option to create new key pair
+
 <img src="assets/images/key-pair-setting.png"/>
 
 Type `ansible_key` in key pair name option, leave other options to their default setting and click on create key pair. As I have already created key pair thats why you are seeing `key pair already exists` message.  
 ```Choose RSA as key pair type and .pem as private key file format if not selected by default```
+
 <img src="assets/images/create-key-pair.png"/>
 
 Select key pair you just created `ansible_key`
+
 <img src="assets/images/key-pair-setting.png"/>
 
-Choose `create new security group` to create new sg for ansible_host and allow only ssh traffic
+Choose `VPC` and `public subnet` by clicking on the edit button in the Network settings option  
+**NOTE:** Choose Auto-assign public ip option
+
+<img src="assets/images/vpc,subnet,ip-setting.png"/>
+
+Choose `create new security group` to create new security group for ansible_host and allow only ssh traffic
+
 <img src="assets/images/ansible-sg-rule.png"/>
 
 For storage option of the ec2 instance leave them as default. Now check all the parameters and if feel ok click `Launch instance`
+
 <img src="assets/images/ec2-storage-setting.png"/>
+
+**Do the above steps for other two instances. Use below settings for other two instances**
+```
+# Settings and Parameters for other instances
+
+- Name= ansible_server1, ansible_server2
+- AMI= Ubuntu
+- select existing key pair = ansible_key
+- VPC and subnet= your VPC and public subnet in that VPC
+- Auto-assign public ip= Enable
+- Security group= create new security group and do below settings
+  - 1st default rule ssh access = allow
+  click add security group rule
+  - select All TCP from Type dropdown option and select Sources type as anywhere
+- storage options= leave as default
+- Click on launch instance
+- Repeat above steps for ansible_sever2 
+```
 
 You can see all of your running instances in the `instances` dashboard.  
 After creating the 3 EC2 instances, name one instance as the ansible_host as it is our ansible control node, and the other two instances as ansible_server1 and ansible_server2 as they are ansible managed nodes.  
+
 <img src="assets/images/running-instances.png"/>
 
 ## Task-02: Connect to ansible_host EC2 instance and install ansible
