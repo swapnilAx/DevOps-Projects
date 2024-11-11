@@ -97,6 +97,7 @@ After creating the 3 EC2 instances, name one instance as the ansible_host as it 
 ## Task-02: Connect to ansible_host EC2 instance and install ansible
 Now connect to ansible_host EC2 instance  
 steps to connect to the ansible_host  
+
 <img src="assets/images/connect-instance-steps.png"/>  
 command to connect to the ansible_host
 ```
@@ -116,6 +117,7 @@ hostnamectl
   - cat /etc/os-release
 
 </b></details>  
+
 <img src="assets/images/host-info.png"/>  
 
 Add the ansible PPA repository using the below command:
@@ -145,7 +147,9 @@ ansible --version
 ## Task-03: Copy private key file
 Now copy the private ssh key from local host to ansible_host in the /home/ubuntu/.ssh directory.  
 ansible_host private key file=  `ansible_key.pem`
+
 <img src="assets/images/ansible-key.png"/>
+
 Now come back to the windows powershell by typing `exit` or `logout` in the ansible_host EC2 instance terminal.  
 Now use the below scp command to copy the private key file to the ansible_host node
 ```
@@ -158,14 +162,17 @@ scp -i ~\Downloads\ansible_key ~\Downloads\ansible_key ubuntu@13.201.40.36:~/.ss
 <img src="assets/images/copy-ansible-key-to-ansible-host.png"/>
 
 Now ssh into the ansible_host node, and navigate to the .ssh/ directory  
-check the permissions of the ansible-key, if they are not `-r-------` or `400` then change the key permissions using below command  
-**permissions before= -rw-rw-r-- or (664)**  
+check the permissions of the ansible-key, if they are not `-r-------` or `400` then change the key permissions  
+**permissions before change= -rw-rw-r-- or (664)**  
+
 <img src="assets/images/show-key-perm.png"/>
+
 command to change permissions
 ```
 sudo chmod 400 ~/.ssh/ansible_key.pem
 ```  
-**permissions after= -r-------- or (400)**
+**permissions after change= -r-------- or (400)**
+
 <img src="assets/images/change-key-permission.png"/>
 
 ## Task-04: Set hosts file
@@ -193,6 +200,7 @@ Before running the ansible playbook you can check if the servers are reachable o
 ansible servers -m ping
 ```
 <img src="assets/images/ping-servers.png">  
+
 It will show `SUCCESS` message if they are reachable.  
 
 Now create a `playbook` directory and navigate to it  
@@ -272,6 +280,7 @@ Now run the playbook using below command
 ansible-playbook simple_webpage.yml
 ```
 After the successful execution of the ansible playbook go to the EC2 dashboard and click on the server1, then in public IPv4 address option their is `open address` option in blue colour, click on it. You will see below output. Same for the other server server2.
+
 <img src="assets/images/server-1-simple-webpage.png">
 <img src="assets/images/server-2-simple-webpage.png">
 
@@ -340,14 +349,16 @@ Now run the ansible playbook using below command
 ansible-playbook deploy_webapp.yml
 ```
 If the command executed successfully you will see the output like below  
+
 <img src="assets/images/deploy-webapp.png">
 
 Now that our health care web application has been deployed successfully, you can access it using the public ip of the two servers or click on open address option in the AWS instances dashboard.  
 You will see that our health care web application has been deployed succesfully.
 
 **OUTPUT** 
+
 <img src="assets/images/server-1-webapp.png">
 <img src="assets/images/server-2-webapp.png">
 
-# Congratulations 🎉🎉 You have successfully deployed a sample health care web application.
+# Congratulations 🎉🎉 You have successfully deployed a sample health care web application using ansible.
 
