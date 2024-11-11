@@ -1,4 +1,4 @@
-#1/bin/bash
+#!/bin/bash
 
 # Update the packages
 #sudo apt update -y
