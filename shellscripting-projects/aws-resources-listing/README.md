@@ -33,7 +33,7 @@
 ```  
  **The Script will prompt the user to enter the AWS region and the service for which the resources need to be listed.**
 ```
--  Usage: ./aws_resource_list.sh <aws_region> <aws_service>
+- Usage: ./aws_resource_list.sh <aws_region> <aws_service>
 - Example: ./aws_resource_list.sh us-east-1 ec2
 ```  
  - Will add more updates to this script in the future.
