@@ -102,7 +102,7 @@ case $2 in
     ;;
   ebs)
     echo "Listing EBS volumes in $aws_region"
-    aws ec2 describe-vloumes --region $aws_region
+    aws ec2 describe-volumes --region $aws_region
     ;;
   elb)
     echo "Listing ELB in $aws_region"

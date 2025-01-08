@@ -3,7 +3,7 @@
  ## " This script will list all the provisioned resources in the AWS account "
 
 ```
-# Note:- This Shell scripting project is reference of the shell scripting project of "Abhishek Veeramalla (A Free DevOps resources YouTuber)"
+# Note:- This Shell scripting project is reference of the shell scripting project of "Abhishek Veeramalla (A Free DevOps and Cloud videos creator/YouTuber)"
 - All Thanks to him.
 ```
 
