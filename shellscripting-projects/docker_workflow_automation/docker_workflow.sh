@@ -9,7 +9,23 @@
 # Version: v1.0.0
 ###################################
 
-figlet -c Auto-Docker
+
+# Check if figlet is installed
+if ! command -v figlet &>/dev/null; then
+  echo "Figlet is not installed."
+  read -p "Do you want to install Figlet? (y/n): " choice
+  if [[ "$choice" =~ ^[Yy]$ ]]; then
+    echo "Installing Figlet..."
+    sudo apt update -y
+    sudo apt install figlet -y
+    echo "Figlet installed successfully."
+  else
+    echo "Figlet installation skipped."
+  fi
+else
+  figlet -c Auto-Docker # Run figlet command
+fi
+
 
 # Ensure Docker is installed
 if ! command -v docker &>/dev/null; then
@@ -26,7 +42,7 @@ if ! command -v docker &>/dev/null; then
   fi
 fi
 
-# Function to display the menu
+# Function to display the main menu
 show_menu() {
   echo "Docker Workflow Automation"
   echo "---------------------------"
@@ -80,7 +96,7 @@ handle_choice() {
       echo ''
       read -p "Enter container ID to stop the container: " container;echo ''
 
-      # check if the container is runnign or not to stop it
+      # check if the container is running or not to stop it
 
       if [[ $(docker ps -q -f "id=$container") ]]; then
         echo -e "Stopping the Container with ID $container..."
@@ -159,7 +175,6 @@ handle_choice() {
 
 
 # Docker loop function for performing the manual docker operations
-
 docker_loop() {
   while true; do
     echo -e "\n--- Docker By Commands ---\n"
@@ -176,9 +191,11 @@ docker_loop() {
     $docker_command
 
     if [[ $? != 0 ]]; then
-      echo -e "\n-----------------------------------------------------------\n\nInvalid Docker command. Please check the command and try again.\n"
+      echo -e "\n-----------------------------------------------------------\n"
+      echo -e "\nInvalid Docker command. Please check the command and try again.\n"
     else
-      echo -e "\n-----------------------------------------------------------\n\nDocker command executed Successfully\n"
+      echo -e "\n-----------------------------------------------------------\n"
+      echo -e "\nDocker command executed Successfully\n"
     fi
   done
 }
