@@ -35,7 +35,7 @@ Login to your AWS account and navigate to the EC2 section in the AWS cloud conso
 
 Click on `Launch instances`
 
-<img src="assets/images/instances-dash-1.png" alt="insatnces dashboard"/>
+<img src="assets/images/instances-dash-1.png" alt="instances dashboard"/>
 
 Type name as `ansible_host` in Name option
 
@@ -319,7 +319,7 @@ sudo cp -r ~/2098_health/* /var/www/html
 sudo rm -rf ~/2098_heal*
 ```
 
-Now lets write a ansible playbook to copy this shell scirpt to each server node to deploy web application.  
+Now lets write a ansible playbook to copy this shell script to each server node to deploy web application.  
 file name= `deploy_webapp.yml`
 
 ```yaml
@@ -353,7 +353,7 @@ If the command executed successfully you will see the output like below
 <img src="assets/images/deploy-webapp.png">
 
 Now that our health care web application has been deployed successfully, you can access it using the public ip of the two servers or click on open address option in the AWS instances dashboard.  
-You will see that our health care web application has been deployed succesfully.
+You will see that our health care web application has been deployed successfully.
 
 **OUTPUT** 
 

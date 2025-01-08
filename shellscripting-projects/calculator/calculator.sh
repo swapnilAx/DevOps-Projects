@@ -85,7 +85,7 @@ calculator() {
         echo -e "\n--> Division: $div"
         ;;
       6)
-        echo -e "\nExting Calculator...\nDone\n"
+        echo -e "\nExiting Calculator...\nDone\n"
         exit 0
         ;;
       *)

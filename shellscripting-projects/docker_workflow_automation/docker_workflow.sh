@@ -16,8 +16,7 @@ if ! command -v figlet &>/dev/null; then
   read -p "Do you want to install Figlet? (y/n): " choice
   if [[ "$choice" =~ ^[Yy]$ ]]; then
     echo "Installing Figlet..."
-    sudo apt update -y
-    sudo apt install figlet -y
+    sudo apt update -y ; sudo apt install figlet -y
     echo "Figlet installed successfully."
   else
     echo "Figlet installation skipped."
@@ -177,7 +176,7 @@ handle_choice() {
 # Docker loop function for performing the manual docker operations
 docker_loop() {
   while true; do
-    echo -e "\n--- Docker By Commands ---\n"
+    echo -e "\n--- Run Docker Commands ---\n"
 
     read -p "(Enter X/x to return to the main menu)Enter a Docker command:- " docker_command
 
