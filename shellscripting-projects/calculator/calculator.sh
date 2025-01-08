@@ -44,7 +44,7 @@ calculator() {
         read -p "Enter first number: " num1
         read -p "Enter second number: " num2
         sub=$(echo "$num1 - $num2" | bc)
-        echo -e "\n--> Substraction: $sub"
+        echo -e "\n--> Subtraction: $sub"
         ;;
       3)
         echo ''
@@ -80,7 +80,7 @@ calculator() {
 
         echo ''
         echo -e "\n--> Addition: $add"
-        echo -e "\n--> Substraction: $sub"
+        echo -e "\n--> Subtraction: $sub"
         echo -e "\n--> Multiplication: $mul"
         echo -e "\n--> Division: $div"
         ;;
